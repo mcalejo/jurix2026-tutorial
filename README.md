@@ -1,4 +1,5 @@
-# A lingua franca for legal and business rules: reading sixteen rule languages in Logical English
+# Logical English as a Lingua Franca for Representing and Reasoning with Legal and Business Rules
+
 
 A 90-minute spotlight tutorial at [JURIX 2026](https://www.irit.fr/jurix2026/), the 39th International Conference on Legal Knowledge and Information Systems.
 
@@ -11,48 +12,52 @@ A 90-minute spotlight tutorial at [JURIX 2026](https://www.irit.fr/jurix2026/), 
 
 ## Abstract
 
-Rules for law and business are written in incompatible notations. Learn Logical English and its superset LPS, then see programs written in ~~eleven~~ sixteen different notations translated into it: an executable, explainable lingua franca, with open tools to try.
+Legal rules and business rules can be written in many different computer-executable rule languages. Most of these languages employ a mathematical syntax, which makes them convenient for computer implementation, but makes it hard for stakeholders without technical training to understand. It also makes it hard to compare the same application written in different languages, and to understand whether the differences come from the different notations or from some deeper conceptual level.
+
+This tutorial presents Logical English  (LE) and Logic Production System (LPS), as a uniform, human-oriented, computer-executable language, in which the features of many other rule languages are included and combined. The tutorial will present LE and LPS, and show how rules and programs written in sixteen different rule languages can be translated into and executed in LE and LPS.
 
 ## Why this tutorial
 
-Each community in computational law writes its rules in its own language. The standards community uses LegalRuleML. Logic programmers use s(CASP) and Prolog. The Rules as Code community uses Blawx, and Stanford CodeX uses Epilog. Decision management uses Drools rule files and decision tables, and industry uses Oracle Intelligent Advisor and insurance product configurations. The blockchain world uses Solidity, Daml and Bitcoin Miniscript. Etc. Each language suits its own field, but together they make comparing, reusing, migrating and scrutinising rules very hard.
+Different communities working in computational law and related fields use different rule languages: The standards community uses LegalRuleML. Logic programmers use s(CASP) and Prolog. The Rules as Code community uses Blawx, and Stanford CodeX uses Epilog. Decision management uses Drools rule files and decision tables, and industry uses Oracle Intelligent Advisor and insurance product configurations. The blockchain world uses Solidity, Daml and Bitcoin Miniscript. Etc. Each of these language is suitable for its own field, but together they make comparing, reusing, migrating and scrutinising rules very difficult.
 
-Logical English is a controlled natural language: a precise subset of English that a computer can run, and that a person can read without technical training. Logical English does not depend on any of these languages, so it can serve as a common language between them. Logic Production Systems (LPS) extends Logical English with events and actions that change the state of the world over time.
+Logical English (LE) incorporates the knowledge representation and problem solving features of other rule languages, while employing a controlled natural language syntax that can be read and understood without any technical training. LE represents knowledge at a level of abstraction above other rule languages, so it can serve as a common language for interchanging knowledge between them. Logic Production Systems (LPS) extends Logical English with events and actions that change the state of the world over time.
 
-The tutorial shows programs from 16 rule languages translated into Logical English or LPS, side by side with their originals. Each translation was checked against the source system's own engine or against an independent reference. The tutorial is useful even to someone who will never use Logical English: it gives a comparative overview of systems that are otherwise hard to compare.
+The tutorial shows translations into LE or LPS of example programs from sixteen rule languages. Each of the translations was checked and validated against the source system's own inference engine or against an independent reference. 
+
+By showing how different rule languages can be translated into a common controlled natural language, the tutorial will give a comparative overview of different rule systems that would be otherwise hard to compare. 
 
 ## What you will learn
 
 1. To read and write Logical English, and Logical English for LPS.
-2. To recognise the main features of sixteen rule languages, and what each can and cannot express.
-3. How a controlled natural language can serve as a common language between them.
+2. To recognise the main features of sixteen rule languages.
+3. How a controlled natural language can serve as a common language between different rule languages.
 4. To run the examples yourself, with open tools in your browser.
 
 ## Programme
 
 | Time | Topic | Presenter |
 |---|---|---|
-| 0:00–0:08 | **Rule languages.** Two kinds of rules: rules that state beliefs, written as logic programs, and rules that produce behaviour, written as reactive rules. | Robert Kowalski |
-| 0:08–0:25 | **Controlled natural language and Logical English.** Templates and sentences; facts, rules and questions; scenarios that state the answers they expect, and so serve as tests; explanations of why an answer holds and why another does not; citations of the source text; conditional answers. | Robert Kowalski |
-| 0:25–0:37 | **Logic Production Systems.** Events, fluents (facts that change over time), causal laws, constraints, and the timeline. | Robert Kowalski, Miguel Calejo |
-| 0:37–1:03 | **A tour of  sixteen rule languages, in  five families**, live. *Legal and academic formalisms:* LegalRuleML, s(CASP) and Prolog, Blawx, Epilog, L4. *Rules as Code for statutes, taxes and benefits:* Axiom RuleSpec, PolicyEngine and OpenFisca, Catala. *Decision management and business rules:* Drools rule files and their decision tables, Oracle Intelligent Advisor. *Industry configurations and financial regulation:* Socotra, Oracle Insurance Policy Administration, and Rune, the language of the derivatives industry's Digital Regulatory Reporting rules. *Ledgers and contracts:* Solidity, Daml, Bitcoin Miniscript. For each: what the community writes, the same rules in Logical English, and how the translation was checked. | Miguel Calejo |
-| 1:03–1:15 | **Writing rules from ordinary language.** Drafting Logical English and LPS from English or French text with an assistant: the language model proposes, the engine checks, the scenarios decide. Logical English in five languages. | Miguel Calejo |
-| 1:15–1:25 | **Hands-on.** Open a LegalRuleML file and a Drools rule file in the browser editor, run the translation, ask *why* and *why not*, and change a rule until a scenario fails. | Both |
-| 1:25–1:30 | **Limitations**, what does not translate, open questions, and discussion. | Both |
+**Rule languages.** Two kinds of rules: rules that state beliefs, written as logic programs, and rules that produce behaviour, written as reactive rules (or integrity constraints).
+**Controlled natural language and Logical English.** Templates and sentences; facts, rules and questions; scenarios that include the answers they expect, and so serve as tests; explanations of why an answer holds and why an answer does not hold; citations of the source text; conditional answers.
+**Logic Production Systems.** Events, fluents (facts that change over time), causal laws, constraints, and the timeline. 
+**A tour of  sixteen rule languages, in  five families**, live. *Legal and academic formalisms:* LegalRuleML, s(CASP) and Prolog, Blawx, Epilog, L4. *Rules as Code for statutes, taxes and benefits:* Axiom RuleSpec, PolicyEngine and OpenFisca, Catala. *Decision management and business rules:* Drools rule files and their decision tables, Oracle Intelligent Advisor. *Industry configurations and financial regulation:* Socotra, Oracle Insurance Policy Administration, and Rune, the language of the derivatives industry's Digital Regulatory Reporting rules. *Ledgers and contracts:* Solidity, Daml, Bitcoin Miniscript. For each language: an example in the language and a translation of the example into LE, together with documentation about how the translation was checked.
+**Writing rules from ordinary language.** Drafting LE and LPS from English or French text with a language model assistant: a three step procedure during which the language model proposes, the engine checks, and the scenarios decide. Variants of LE in four other natural languages, French, Potuguese, Spanish and Italian.
+**Hands-on.**  During which attendees open a LegalRuleML file and a Drools rule file in the browser editor, run the translation, ask *why* and *why not*, and change a rule until a scenario fails.
+**Limitations**, what does not translate, open questions, and discussion.
 
 ## Who should attend
 
-Researchers in artificial intelligence and law, legal knowledge engineers, Rules as Code practitioners in government, standards makers, logic programmers, and people in industry who look after large sets of rules. Lawyers and policy makers who do not program are welcome.
+Researchers in artificial intelligence and law, legal knowledge engineers, Rules as Code practitioners in government, standards makers, logic programmers, and people in industry who look after large sets of rules. Lawyers and policy makers who do not program.
 
-**Prerequisites.** None, beyond English and the idea of a rule. Some experience of logic programming or of a rule engine helps, but is not assumed. No knowledge of Logical English, LPS or any of the languages is needed.
+**Prerequisites.** None, beyond a proficiency in English. Some knowledge of logic programming or of a rule engine might be useful, but is not assumed. No knowledge of Logical English, LPS or any of the other rule languages is needed.
 
 **What to bring.** For the hands-on part, a laptop with a web browser. Nothing needs to be installed. A recording will be shown for anyone without a laptop.
 
 ## Tools and materials
 
-- **Logical English**: the language, its engine, its explanations and a web editor. Open source under the Apache 2.0 licence, at [github.com/LogicalContractsOrg/LogicalEnglish2](https://github.com/LogicalContractsOrg/LogicalEnglish2), and free to use online at [le2.logicalcontracts.com](https://le2.logicalcontracts.com).
+- **Logical English**: the language, its inference engine, its explanations and a web editor. Open source under the Apache 2.0 licence, at [github.com/LogicalContractsOrg/LogicalEnglish2](https://github.com/LogicalContractsOrg/LogicalEnglish2), and free to use online at [le2.logicalcontracts.com](https://le2.logicalcontracts.com).
 - **Logic Production Systems**: events, fluents, causal laws and a timeline, with its own web editor. Open source under the Apache 2.0 licence, at [github.com/LogicalContractsOrg/lps2](https://github.com/LogicalContractsOrg/lps2), and free to use online at [lps2.logicalcontracts.com](https://lps2.logicalcontracts.com).
-- **The public examples**: the translated programs whose sources may be shared, from s(CASP) and Prolog, Blawx, LegalRuleML and Bitcoin Miniscript. Each comes with its original text, its scenarios and its answers. They are among the examples of the two editors.
+- **The public examples**: the translated programs whose sources may be shared, from s(CASP) and Prolog, Blawx, LegalRuleML and Bitcoin Miniscript. Each comes with its original text, scenarios and expected answers. They are among the examples supplied with the two editors.
 - **The translators**: attendees can try the translations between LegalRuleML and Logical English, between s(CASP) or Prolog and Logical English, and from Blawx into Logical English online, during and after the session.
 - **Slides and exercise sheet**, with three short tasks and worked solutions: *to be published here before the session.*
 
