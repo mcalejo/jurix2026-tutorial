@@ -35,8 +35,8 @@ By showing how different rule languages can be translated into a common controll
 
 ## Programme
 
-| Topic | Presenter |
-|---|---|
+| Topic |
+|---|
 **Rule languages.** Two kinds of rules: rules that state beliefs, written as logic programs, and rules that produce behaviour, written as reactive rules (or integrity constraints).
 **Controlled natural language and Logical English.** Templates and sentences; facts, rules and questions; scenarios that include the answers they expect, and so serve as tests; explanations of why an answer holds and why an answer does not hold; citations of the source text; conditional answers.
 **Logic Production Systems.** Events, fluents (facts that change over time), causal laws, constraints, and the timeline. 
