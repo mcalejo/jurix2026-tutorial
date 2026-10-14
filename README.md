@@ -10,6 +10,9 @@ A 90-minute spotlight tutorial at [JURIX 2026](https://www.irit.fr/jurix2026/), 
 | **Length** | 90 minutes |
 | **Registration** | Through the [JURIX 2026 conference registration](https://www.irit.fr/jurix2026/). |
 
+## Presented by
+Robert Kowalski (Imperial College London) and Miguel Calejo (Logical Contracts)
+
 ## Abstract
 
 Legal rules and business rules can be written in many different computer-executable rule languages. Most of these languages employ a mathematical syntax, which makes them convenient for computer implementation, but makes it hard for stakeholders without technical training to understand. It also makes it hard to compare the same application written in different languages, and to understand whether the differences come from the different notations or from some deeper conceptual level.
