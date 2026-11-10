@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JURIX 2026 Lab</title>
+<meta name="description" content="The hands-on exercises of the Logical English tutorial at JURIX 2026: a LegalRuleML twin, a Drools twin, and a rule to break.">
+<style>
+:root {
+    --navy: #233e73;
+    --navy-soft: #e8edf6;
+    --amber: #c77d0a;
+    --ink: #1d2433;
+    --muted: #5b6475;
+    --bg: #ffffff;
+    --panel: #f6f8fc;
+    --line: #d9dfeb;
+    --link: #233e73;
+    --good: #2e7d4f;
+}
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        --navy: #9db4e8;
+        --navy-soft: #1d2a44;
+        --amber: #f0b04a;
+        --ink: #e6e9f0;
+        --muted: #a3abba;
+        --bg: #11161f;
+        --panel: #182030;
+        --line: #2b3549;
+        --link: #a9c1f5;
+        --good: #6fcf97;
+    }
+}
+:root[data-theme="dark"] {
+    --navy: #9db4e8; --navy-soft: #1d2a44; --amber: #f0b04a; --ink: #e6e9f0;
+    --muted: #a3abba; --bg: #11161f; --panel: #182030; --line: #2b3549;
+    --link: #a9c1f5; --good: #6fcf97;
+}
+* { box-sizing: border-box; }
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 17px/1.55 'Fira Sans', 'Segoe UI', system-ui, sans-serif;
+}
+main { max-width: 760px; margin: 0 auto; padding: 24px 16px 64px; }
+header { border-bottom: 3px solid var(--navy-soft); margin-bottom: 20px; padding-bottom: 12px; }
+.brand { display: inline-block; background: #233e73; color: #fff; font-weight: 700;
+         font-size: 13px; letter-spacing: 0.04em; padding: 3px 9px; border-radius: 4px; }
+h1 { color: var(--navy); font-size: 28px; line-height: 1.2; margin: 12px 0 6px; }
+h2 { color: var(--navy); font-size: 22px; margin: 36px 0 8px; }
+h2 .time { color: var(--muted); font-size: 15px; font-weight: 400; margin-left: 6px; }
+.sub { color: var(--muted); margin: 0; }
+a { color: var(--link); }
+a.open {
+    display: inline-block; background: #233e73; color: #fff; text-decoration: none;
+    padding: 8px 14px; border-radius: 6px; font-weight: 600; margin: 4px 0;
+}
+a.open:hover { background: #1a2f58; }
+code { font-family: 'Fira Code', ui-monospace, monospace; background: var(--navy-soft);
+       padding: 0 5px; border-radius: 4px; font-size: 0.9em; overflow-wrap: anywhere; }
+pre { background: var(--panel); border-left: 4px solid var(--navy); padding: 10px 14px;
+      border-radius: 6px; overflow-x: auto; font-size: 14px; line-height: 1.4; }
+pre code { background: none; padding: 0; }
+ol li, ul li { margin: 6px 0; }
+.box { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 12px 16px; }
+details { border: 1px solid var(--line); border-radius: 8px; padding: 8px 14px; margin: 12px 0; }
+details[open] { background: var(--panel); }
+summary { cursor: pointer; font-weight: 600; color: var(--amber); }
+nav.toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0; }
+nav.toc a { border: 1px solid var(--line); border-radius: 999px; padding: 3px 12px;
+            text-decoration: none; font-size: 15px; }
+.muted { color: var(--muted); font-size: 15px; }
+footer { margin-top: 48px; border-top: 1px solid var(--line); padding-top: 12px; }
+</style>
+</head>
+<body>
+<main>
+
+<header>
+    <span class="brand">LOGICAL CONTRACTS</span>
+    <h1>Hands-on: rules from other languages, in Logical English</h1>
+    <p class="sub">JURIX 2026 tutorial · Toulouse · 8 December 2026 · 20 minutes</p>
+</header>
+
+<p>You need a laptop with a web browser. You do not install anything. If you have
+no laptop, work with your neighbour. Raise your hand at any time: we walk around the room.</p>
+
+<nav class="toc" aria-label="Exercises">
+    <a href="#ex1">1 · LegalRuleML</a>
+    <a href="#ex2">2 · Drools</a>
+    <a href="#ex3">3 · Break a rule</a>
+    <a href="#more">More</a>
+    <a href="#words">Words</a>
+</nav>
+
+<div class="box">
+<strong>Two words you need.</strong>
+A <em>twin</em> is a program of another system, translated into Logical English (LE).
+A <em>scenario</em> is a set of facts. A scenario also gives the answers that it
+expects, so it is a test. The expected answers of each twin come from the engine of
+the other system.
+</div>
+
+<h2 id="ex1">1 · A LegalRuleML twin <span class="time">6 minutes</span></h2>
+
+<p>LegalRuleML is the OASIS standard for legal rules in XML. This document comes
+from the LegalRuleML specification: section 29 of the Australian National Consumer
+Credit Protection Act 2009. A person must not engage in a credit activity without a
+credit licence.</p>
+
+<p><a class="open" href="https://le2.logicalcontracts.com/editor/index.html?example=migration/legalruleml/ex5_section29new/ex5_section29new&amp;scenario=unlicensed_trader&amp;query=obligations" target="_blank" rel="noopener">Open the twin in the LE editor</a></p>
+
+<ol>
+    <li>Select <strong>File ▸ Show the Original…</strong>. The LegalRuleML file opens.
+        Find <code>lrml:Prohibition</code>. Then find rule <code>ps1</code> in the twin.</li>
+    <li>Make sure that the scenario is <code>unlicensed_trader</code> and the query is
+        <code>obligations</code>. Click <strong>Query</strong>.</li>
+    <li>Click the first answer. Read the explanation: which rule and which facts make the answer true?</li>
+    <li>Select the scenario <code>licensed_trader</code> and the query
+        <code>prohibitions</code>. Click <strong>Query</strong>. There is no answer.</li>
+    <li>Click <strong>Why not</strong>. Find the condition that is not true for Bob.</li>
+</ol>
+
+<details>
+<summary>Answers</summary>
+<ul>
+    <li>Step 2 gives two answers: Alice must pay 200 penalty units, and Alice must pay
+        2000 civil penalty units.</li>
+    <li>Step 3: rule <code>reparation_1_1</code> gives the 200 penalty units. Its
+        condition is that Alice violates the prohibition of rule <code>ps1</code>:
+        Alice is a person, Alice has no credit licence, and Alice engages in a credit activity.</li>
+    <li>Step 5: the condition that fails is
+        <code>it is not the case that bob holds a credit licence</code>. Bob holds a licence.
+        That is section 29(2): the prohibition does not apply to a licensee.</li>
+</ul>
+</details>
+
+<h2 id="ex2">2 · A Drools twin <span class="time">6 minutes</span></h2>
+
+<p>Drools is a rule engine for Java. Its rules change a <em>working memory</em>, a
+store of facts. In the twin, the facts are states of the world, and each change is an
+event. This twin is written for LPS (Logic Production Systems), the extension of
+Logical English for events and actions in time.</p>
+
+<p><a class="open" href="https://lps2.logicalcontracts.com/ide?example=migration/drools/fire_alarm/fire_alarm.le" target="_blank" rel="noopener">Open the fire alarm in the LPS editor</a></p>
+
+<ol>
+    <li>Read the rule under the comment <code>Rule "RaiseAlarm"</code>. Then select
+        <strong>View ▸ The original this was converted from</strong> and find the same
+        rule in the Drools file.</li>
+    <li>Click <strong>Run</strong>.</li>
+    <li>On the <strong>Timeline</strong>, find the cycle where the fires start, and the
+        cycle where the alarm goes on.</li>
+    <li>Right-click the event <em>an alarm goes on</em>. Which rule made it happen?</li>
+    <li>Read the comment above the scenario <code>driver</code>. It gives the facts that
+        Drools had at the end. Compare them with the last state of the twin.</li>
+</ol>
+
+<details>
+<summary>Answers</summary>
+<ul>
+    <li>Step 3: the fires start at cycle 11. At cycle 12 the sprinklers turn on and the
+        alarm goes on. The fires are put out at cycle 21, and at cycle 22 the sprinklers
+        turn off and the alarm goes off.</li>
+    <li>Step 4: the twin of the Drools rule <code>RaiseAlarm</code>: there is a fire in a
+        room, and no alarm is on.</li>
+    <li>Step 5: at the end, Drools has the four rooms and the four sprinklers, and no fire
+        and no alarm. The twin ends in the same state.</li>
+    <li>The rules that only print text in Java are not translated. They stay in the twin
+        as <code>TODO</code> comments, with their Java.</li>
+</ul>
+</details>
+
+<h2 id="ex3">3 · Break a rule <span class="time">8 minutes</span></h2>
+
+<p>Go back to the LegalRuleML twin of exercise 1. You change a rule, and the
+scenarios tell you what you changed.</p>
+
+<ol>
+    <li>Find rule <code>ps1</code>. Delete its last condition:
+<pre><code>rule ps1:
+a party is forbidden that the party engages in a credit activity if
+    the party is a person
+    and it is not the case that the party holds a credit licence.</code></pre>
+        The rule must now end with <code>the party is a person.</code> (with a full stop).</li>
+    <li>Select <strong>Misc ▸ Run the Program's Tests…</strong>.</li>
+    <li>Which scenarios fail? For each failure, read the expected answer and the actual answer.</li>
+    <li>Ask the question <code>permissions</code> in the scenario <code>licensed_trader</code>.
+        Then ask <code>prohibitions</code>. What is strange?</li>
+    <li>Put the condition back. Run the tests again: all of them must pass.</li>
+</ol>
+
+<details>
+<summary>Answers</summary>
+<ul>
+    <li>Step 3: five tests fail, all in the scenario <code>licensed_trader</code>. Bob is
+        now forbidden to engage in a credit activity, so he violates the prohibition, he
+        must pay the penalties, and he is in breach. The other three scenarios still pass:
+        nobody in them holds a licence, so the deleted condition was true for each of them.</li>
+    <li>Step 4: Bob is permitted (rule <code>ps2</code>) <em>and</em> forbidden (the changed
+        rule <code>ps1</code>) to engage in a credit activity. Two rules are in conflict.
+        LegalRuleML can say which rule wins (defeasible rules, with an order between
+        them). The original text avoids the conflict with the exception in section 29(2).</li>
+    <li>The lesson: a scenario with its expected answers is a test. A small change to a rule
+        shows at once where its answers change.</li>
+</ul>
+</details>
+
+<h2 id="more">More, if you finish early</h2>
+
+<ul>
+    <li><strong>Open a file of another system yourself.</strong> Download the
+        <a href="https://raw.githubusercontent.com/LogicalContractsOrg/LogicalEnglish2/main/examples/migration/legalruleml/ex5_section29new/sources/ex5-section29new-normal.lrml">LegalRuleML file</a>
+        or the
+        <a href="https://raw.githubusercontent.com/LogicalContractsOrg/lps2/main/examples/migration/drools/discount/sources/discount.drl">Drools discount rules</a>.
+        In the LE editor, select <strong>File ▸ Open…</strong> and open the file. The
+        translator writes the twin. <span class="muted">This needs the workshop account:
+        ask us for it.</span></li>
+    <li><strong>Other twins.</strong> In the LE editor, select <strong>File ▸ Open example
+        from server…</strong> and look in the folder <code>migration</code>: Blawx, Catala,
+        DMN, Epilog, L4, Bitcoin Miniscript, Axiom RuleSpec, s(CASP). Each folder has a
+        README with steps to try.</li>
+    <li><strong>Logical English in French.</strong> Open
+        <a href="https://le2.logicalcontracts.com/editor/index.html?example=fr/citoyennete" target="_blank" rel="noopener"><code>fr/citoyennete</code></a>.
+        Add a scenario, in French, for a child who is born in France. Run the query.
+        Also in Portuguese (<code>pt/cidadania</code>), Spanish (<code>es/ciudadania</code>)
+        and Italian (<code>it/cittadinanza</code>).</li>
+    <li><strong>Write a rule from text, with a language model.</strong> In the LE editor,
+        open the <strong>LE Assistant</strong> tab at the bottom. Paste a short article of a
+        regulation, and ask for the rules and one scenario. Then write a second scenario
+        yourself, and run the tests. The model writes the draft; your scenarios decide.</li>
+</ul>
+
+<h2 id="words">Words used on this page</h2>
+<ul>
+    <li><strong>Template</strong>: the pattern of a sentence, with slots for values, for example
+        <code>*a person* holds a credit licence</code>.</li>
+    <li><strong>Query</strong>: a question to the program.</li>
+    <li><strong>Explanation</strong>: the rules and facts that make an answer true. Click an answer to see it.</li>
+    <li><strong>Why not</strong>: the conditions that fail, when a query has no answer.</li>
+    <li><strong>Fluent</strong> (in LPS): a fact that can change in time, for example
+        <code>an alarm is on</code>.</li>
+    <li><strong>Cycle</strong> (in LPS): one step of time on the timeline.</li>
+</ul>
+
+<footer class="muted">
+    <p>Logical English: <a href="https://le2.logicalcontracts.com">le2.logicalcontracts.com</a>
+    · Logic Production Systems: <a href="https://lps2.logicalcontracts.com">lps2.logicalcontracts.com</a>
+    · Source code, Apache 2.0 licence: <a href="https://github.com/LogicalContractsOrg">github.com/LogicalContractsOrg</a></p>
+    <p>The twins are provided "as is", without warranty of any kind, and are not legal advice.</p>
+</footer>
+
+</main>
+</body>
+</html>
