@@ -1,0 +1,65 @@
+% The London Underground Emergency Notice, as beliefs, in Logical English.
+%
+%     Emergencies
+%     Press the alarm signal button to alert the driver.
+%     The driver will stop if any part of the train is in a station.
+%     If not, the train will continue to the next station,
+%     where help can more easily be given.
+%     There is a 50 pound penalty for improper use.
+%
+% After R. Kowalski, Computational Logic and Human Thinking, chapter 1.
+
+the target language is: prolog.
+
+the templates are:
+    *a person* presses the alarm signal button of *a train*.
+    the driver of *a train* is alerted.
+    *a part* of *a train* is in *a station*.
+    *a train* stops in *a station*.
+    *a train* continues to the next station.
+    *a person* is liable to a penalty of *an amount*.
+    *a person* uses the alarm signal button improperly; unknown.
+
+the knowledge base emergency notice includes:
+
+rule sentence_1 with provenance the Emergency Notice, confer "Press the alarm signal button to alert the driver":
+the driver of a train is alerted
+    if a person presses the alarm signal button of the train.
+
+rule sentence_2 with provenance the Emergency Notice, confer "The driver will stop if any part of the train is in a station":
+a train stops in a station
+    if the driver of the train is alerted
+    and a part of the train is in the station.
+
+rule sentence_3 with provenance the Emergency Notice, confer "If not, the train will continue to the next station":
+a train continues to the next station
+    if the driver of the train is alerted
+    and it is not the case that
+        a part of the train is in a station.
+
+rule sentence_4 with provenance the Emergency Notice, confer "There is a 50 pound penalty for improper use":
+a person is liable to a penalty of 50
+    if the person presses the alarm signal button of a train
+    and the person uses the alarm signal button improperly.
+
+scenario in a station is:
+    alice presses the alarm signal button of the 8:15.
+    the last carriage of the 8:15 is in Victoria.
+    stops expects answers ["the 8:15 stops in Victoria"].
+    continues expects answers [].
+
+scenario between stations is:
+    alice presses the alarm signal button of the 8:15.
+    stops expects answers [].
+    continues expects answers ["the 8:15 continues to the next station"].
+    penalty expects answers ["alice is liable to a penalty of 50"]
+        and unknowns ["alice uses the alarm signal button improperly"].
+
+query stops is:
+    which train stops in which station.
+
+query continues is:
+    which train continues to the next station.
+
+query penalty is:
+    which person is liable to a penalty of which amount.

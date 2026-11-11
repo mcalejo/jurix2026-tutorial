@@ -1,0 +1,9 @@
+{
+  "name": "jurix-theory-tools",
+  "private": true,
+  "description": "Makes the editable PowerPoint of the theory slides (md2pptx.cjs)",
+  "dependencies": {
+    "pptxgenjs": "3.12.0",
+    "sharp": "0.33.5"
+  }
+}

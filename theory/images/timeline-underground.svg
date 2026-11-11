@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1160 468" font-family="Helvetica, Arial, sans-serif" font-size="22">
+<line x1="432" y1="40" x2="432" y2="434" stroke="#d9dfeb" stroke-width="1.5"/>
+<text x="432" y="32" text-anchor="middle" fill="#5b6475" font-size="19">0</text>
+<line x1="518" y1="40" x2="518" y2="434" stroke="#d9dfeb" stroke-width="1.5"/>
+<text x="518" y="32" text-anchor="middle" fill="#5b6475" font-size="19">1</text>
+<line x1="604" y1="40" x2="604" y2="434" stroke="#d9dfeb" stroke-width="1.5"/>
+<text x="604" y="32" text-anchor="middle" fill="#5b6475" font-size="19">2</text>
+<line x1="690" y1="40" x2="690" y2="434" stroke="#d9dfeb" stroke-width="1.5"/>
+<text x="690" y="32" text-anchor="middle" fill="#5b6475" font-size="19">3</text>
+<line x1="776" y1="40" x2="776" y2="434" stroke="#d9dfeb" stroke-width="1.5"/>
+<text x="776" y="32" text-anchor="middle" fill="#5b6475" font-size="19">4</text>
+<line x1="862" y1="40" x2="862" y2="434" stroke="#d9dfeb" stroke-width="1.5"/>
+<text x="862" y="32" text-anchor="middle" fill="#5b6475" font-size="19">5</text>
+<line x1="948" y1="40" x2="948" y2="434" stroke="#d9dfeb" stroke-width="1.5"/>
+<text x="948" y="32" text-anchor="middle" fill="#5b6475" font-size="19">6</text>
+<line x1="1034" y1="40" x2="1034" y2="434" stroke="#d9dfeb" stroke-width="1.5"/>
+<text x="1034" y="32" text-anchor="middle" fill="#5b6475" font-size="19">7</text>
+<line x1="1120" y1="40" x2="1120" y2="434" stroke="#d9dfeb" stroke-width="1.5"/>
+<text x="1120" y="32" text-anchor="middle" fill="#5b6475" font-size="19">8</text>
+<text x="416" y="72" text-anchor="end" fill="#1d2433">the train is in a station</text>
+<rect x="432" y="57" width="86" height="18" rx="9" fill="#233e73"/>
+<rect x="948" y="57" width="172" height="18" rx="9" fill="#233e73"/>
+<text x="416" y="110" text-anchor="end" fill="#1d2433">alice is on the train</text>
+<rect x="432" y="95" width="688" height="18" rx="9" fill="#233e73"/>
+<text x="416" y="148" text-anchor="end" fill="#1d2433">there is an emergency</text>
+<rect x="690" y="133" width="430" height="18" rx="9" fill="#233e73"/>
+<text x="416" y="186" text-anchor="end" fill="#1d2433">the driver is alerted</text>
+<rect x="776" y="171" width="344" height="18" rx="9" fill="#233e73"/>
+<text x="416" y="224" text-anchor="end" fill="#1d2433">the train is stopped</text>
+<rect x="1034" y="209" width="86" height="18" rx="9" fill="#233e73"/>
+<line x1="20" y1="240" x2="1140" y2="240" stroke="#d9dfeb" stroke-width="1.5"/>
+<text x="416" y="262" text-anchor="end" fill="#c77d0a" font-weight="600">the train leaves the station</text>
+<circle cx="561" cy="255" r="9" fill="#c77d0a"/>
+<text x="416" y="300" text-anchor="end" fill="#c77d0a" font-weight="600">a fire starts</text>
+<circle cx="647" cy="293" r="9" fill="#c77d0a"/>
+<text x="416" y="338" text-anchor="end" fill="#c77d0a" font-weight="600">alice presses the alarm signal button</text>
+<circle cx="733" cy="331" r="9" fill="#c77d0a"/>
+<text x="416" y="376" text-anchor="end" fill="#c77d0a" font-weight="600">the train arrives at the next station</text>
+<circle cx="905" cy="369" r="9" fill="#c77d0a"/>
+<text x="416" y="414" text-anchor="end" fill="#c77d0a" font-weight="600">the driver stops the train</text>
+<circle cx="991" cy="407" r="9" fill="#c77d0a"/>
+<rect x="432" y="445" width="34" height="12" rx="6" fill="#233e73"/><text x="476" y="458" fill="#5b6475" font-size="18">a fluent holds</text><circle cx="652" cy="452" r="7" fill="#c77d0a"/><text x="666" y="458" fill="#5b6475" font-size="18">an event or an action happens</text>
+</svg>

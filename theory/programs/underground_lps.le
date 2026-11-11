@@ -1,0 +1,69 @@
+% The London Underground Emergency Notice, as goals and beliefs over time,
+% in Logical English for LPS.
+% After R. Kowalski, Computational Logic and Human Thinking, chapter 1.
+
+the target language is: lps.
+
+the maximum time is 8.
+
+the events are:
+    a fire starts.
+    the train leaves the station.
+    the train arrives at the next station.
+
+the actions are:
+    *a person* presses the alarm signal button.
+    the driver stops the train.
+    *a person* pays a penalty of *an amount*.
+
+the fluents are:
+    there is an emergency.
+    *a person* is on the train.
+    the driver is alerted.
+    the train is in a station.
+    the train is stopped.
+
+the knowledge base emergency notice includes:
+
+initially the train is in a station
+    and alice is on the train.
+
+when a fire starts
+then there is an emergency.
+
+when a person presses the alarm signal button
+then the driver is alerted.
+
+when the train leaves the station
+then it is not the case that the train is in a station.
+
+when the train arrives at the next station
+then the train is in a station.
+
+when the driver stops the train
+then the train is stopped.
+
+if there is an emergency
+    and a person is on the train
+    and it is not the case that the driver is alerted
+then the person presses the alarm signal button.
+
+if the driver is alerted at a first time
+    and it is not the case that the train is stopped at the first time
+then the driver stops the train from a second time to a third time.
+
+it must not be true that
+    the driver stops the train
+    and it is not the case that the train is in a station.
+
+if it is not the case that there is an emergency
+    and a person presses the alarm signal button
+then the person pays a penalty of 50.
+
+scenario fire between stations is:
+    the train leaves the station from 1 to 2.
+    a fire starts from 2 to 3.
+    the train arrives at the next station from 5 to 6.
+
+scenario improper use is:
+    bob presses the alarm signal button from 2 to 3.

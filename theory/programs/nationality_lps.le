@@ -1,0 +1,61 @@
+% British citizenship over time: sections 1(1) and 12 of the
+% British Nationality Act 1981, in Logical English for LPS.
+%
+%     12.-(1) If any British citizen of full age and capacity makes in the
+%     prescribed manner a declaration of renunciation of British citizenship,
+%     then, subject to subsections (3) and (4), the Secretary of State shall
+%     cause the declaration to be registered.
+%     (2) On the registration of a declaration made in pursuance of this
+%     section the person who made it shall cease to be a British citizen.
+%     (3) A declaration made by a person in pursuance of this section shall
+%     not be registered unless the Secretary of State is satisfied that the
+%     person who made it will after the registration have or acquire some
+%     citizenship or nationality other than British citizenship; ...
+
+the target language is: lps.
+
+the maximum time is 9.
+
+the events are:
+    *a person* is born in the UK to *a parent*.
+    *a person* declares renunciation.
+    *a person* acquires another nationality.
+
+the actions are:
+    the Secretary of State registers the declaration of *a person*.
+
+the fluents are:
+    *a person* is a British citizen.
+    *a person* is settled in the UK.
+    *a person* has another nationality.
+
+the knowledge base British Nationality Act includes:
+
+initially mary is a British citizen.
+
+when a person is born in the UK to a parent
+    and the parent is a British citizen
+then the person is a British citizen.
+
+when a person is born in the UK to a parent
+    and the parent is settled in the UK
+then the person is a British citizen.
+
+when a person acquires another nationality
+then the person has another nationality.
+
+if a person is a British citizen at a first time
+    and the person declares renunciation from the first time to a second time
+then the Secretary of State registers the declaration of the person from a third time to a fourth time.
+
+when the Secretary of State registers the declaration of a person
+then it is not the case that the person is a British citizen.
+
+it must not be true that
+    the Secretary of State registers the declaration of a person
+    and it is not the case that the person has another nationality.
+
+scenario john is:
+    john is born in the UK to mary from 1 to 2.
+    john declares renunciation from 3 to 4.
+    john acquires another nationality from 6 to 7.

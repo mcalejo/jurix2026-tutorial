@@ -1,0 +1,55 @@
+% Section 1(1) of the British Nationality Act 1981, as enacted,
+% as beliefs, in Logical English.
+%
+%     1.-(1) A person born in the United Kingdom after commencement shall be
+%     a British citizen if at the time of the birth his father or mother is-
+%       (a) a British citizen; or
+%       (b) settled in the United Kingdom.
+%
+% After M. Sergot, F. Sadri, R. Kowalski, F. Kriwaczek, P. Hammond, T. Cory,
+% The British Nationality Act as a Logic Program, Communications of the ACM, 1986.
+
+the target language is: prolog.
+
+the templates are:
+    *a person* is a British citizen.
+    *a person* is born in *a place* on *a date*.
+    *a date* is after commencement.
+    *a person* is a parent of *a child*.
+    *a person* is a British citizen on *a date*.
+    *a person* is settled in the UK on *a date*; undefined.
+
+the knowledge base British Nationality Act includes:
+
+rule section_1_1 with provenance the British Nationality Act 1981 at "section 1(1)":
+a person is a British citizen
+    if the person is born in the UK on a date
+    and the date is after commencement
+    and a parent is a parent of the person
+    and the parent is a British citizen on the date
+        or the parent is settled in the UK on the date.
+
+a date is after commencement
+    if the date is after 1982-12-31.
+
+scenario john is:
+    john is born in the UK on 1990-05-01.
+    mary is a parent of john.
+    mary is a British citizen on 1990-05-01.
+    citizens expects answers ["john is a British citizen"].
+
+scenario peter is:
+    peter is born in the UK on 1990-05-01.
+    ann is a parent of peter.
+    it is unknown whether ann is settled in the UK on 1990-05-01.
+    citizens expects answers ["peter is a British citizen"]
+        and unknowns ["ann is settled in the UK on 1990-05-01"].
+
+scenario paul is:
+    paul is born in France on 1990-05-01.
+    mary is a parent of paul.
+    mary is a British citizen on 1990-05-01.
+    citizens expects answers [].
+
+query citizens is:
+    which person is a British citizen.

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1160 354" font-family="Helvetica, Arial, sans-serif" font-size="22">
+<line x1="633" y1="40" x2="633" y2="320" stroke="#d9dfeb" stroke-width="1.5"/>
+<text x="633" y="32" text-anchor="middle" fill="#5b6475" font-size="19">0</text>
+<line x1="687" y1="40" x2="687" y2="320" stroke="#d9dfeb" stroke-width="1.5"/>
+<text x="687" y="32" text-anchor="middle" fill="#5b6475" font-size="19">1</text>
+<line x1="741" y1="40" x2="741" y2="320" stroke="#d9dfeb" stroke-width="1.5"/>
+<text x="741" y="32" text-anchor="middle" fill="#5b6475" font-size="19">2</text>
+<line x1="795" y1="40" x2="795" y2="320" stroke="#d9dfeb" stroke-width="1.5"/>
+<text x="795" y="32" text-anchor="middle" fill="#5b6475" font-size="19">3</text>
+<line x1="849" y1="40" x2="849" y2="320" stroke="#d9dfeb" stroke-width="1.5"/>
+<text x="849" y="32" text-anchor="middle" fill="#5b6475" font-size="19">4</text>
+<line x1="904" y1="40" x2="904" y2="320" stroke="#d9dfeb" stroke-width="1.5"/>
+<text x="904" y="32" text-anchor="middle" fill="#5b6475" font-size="19">5</text>
+<line x1="958" y1="40" x2="958" y2="320" stroke="#d9dfeb" stroke-width="1.5"/>
+<text x="958" y="32" text-anchor="middle" fill="#5b6475" font-size="19">6</text>
+<line x1="1012" y1="40" x2="1012" y2="320" stroke="#d9dfeb" stroke-width="1.5"/>
+<text x="1012" y="32" text-anchor="middle" fill="#5b6475" font-size="19">7</text>
+<line x1="1066" y1="40" x2="1066" y2="320" stroke="#d9dfeb" stroke-width="1.5"/>
+<text x="1066" y="32" text-anchor="middle" fill="#5b6475" font-size="19">8</text>
+<line x1="1120" y1="40" x2="1120" y2="320" stroke="#d9dfeb" stroke-width="1.5"/>
+<text x="1120" y="32" text-anchor="middle" fill="#5b6475" font-size="19">9</text>
+<text x="617" y="72" text-anchor="end" fill="#1d2433">mary is a British citizen</text>
+<rect x="633" y="57" width="487" height="18" rx="9" fill="#233e73"/>
+<text x="617" y="110" text-anchor="end" fill="#1d2433">john is a British citizen</text>
+<rect x="741" y="95" width="271" height="18" rx="9" fill="#233e73"/>
+<text x="617" y="148" text-anchor="end" fill="#1d2433">john has another nationality</text>
+<rect x="1012" y="133" width="108" height="18" rx="9" fill="#233e73"/>
+<line x1="20" y1="164" x2="1140" y2="164" stroke="#d9dfeb" stroke-width="1.5"/>
+<text x="617" y="186" text-anchor="end" fill="#c77d0a" font-weight="600">john is born in the UK to mary</text>
+<circle cx="714" cy="179" r="9" fill="#c77d0a"/>
+<text x="617" y="224" text-anchor="end" fill="#c77d0a" font-weight="600">john declares renunciation</text>
+<circle cx="822" cy="217" r="9" fill="#c77d0a"/>
+<text x="617" y="262" text-anchor="end" fill="#c77d0a" font-weight="600">john acquires another nationality</text>
+<circle cx="985" cy="255" r="9" fill="#c77d0a"/>
+<text x="617" y="300" text-anchor="end" fill="#c77d0a" font-weight="600">the Secretary of State registers the declaration of john</text>
+<circle cx="1039" cy="293" r="9" fill="#c77d0a"/>
+<rect x="633" y="331" width="34" height="12" rx="6" fill="#233e73"/><text x="677" y="344" fill="#5b6475" font-size="18">a fluent holds</text><circle cx="853" cy="338" r="7" fill="#c77d0a"/><text x="867" y="344" fill="#5b6475" font-size="18">an event or an action happens</text>
+</svg>

@@ -1,0 +1,191 @@
+/* @theme jurix-theory */
+/* Theme of the theory part of the JURIX 2026 tutorial on Logical English.
+   The same look as the practical part: navy, white ground, one amber accent. */
+
+@import 'default';
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;600;700&family=Fira+Code:wght@400;500&display=swap');
+
+:root {
+    --navy: #233e73;
+    --navy-soft: #e8edf6;
+    --amber: #c77d0a;
+    --ink: #1d2433;
+    --muted: #5b6475;
+    --green: #2e7d4f;
+    --red: #b3372f;
+}
+
+section {
+    font-family: 'Fira Sans', 'Segoe UI', sans-serif;
+    font-size: 27px;
+    color: var(--ink);
+    background: #ffffff;
+    padding: 56px 72px 64px 72px;
+    justify-content: flex-start;
+}
+
+section::after {            /* page number */
+    color: var(--muted);
+    font-size: 16px;
+}
+
+footer {
+    color: var(--muted);
+    font-size: 15px;
+    left: 72px;
+}
+
+h1 {
+    color: var(--navy);
+    font-size: 46px;
+    font-weight: 700;
+    margin: 0 0 20px 0;
+    border-bottom: 3px solid var(--navy-soft);
+    padding-bottom: 8px;
+}
+
+h2 { color: var(--navy); font-size: 32px; margin: 10px 0 8px 0; }
+h3 { color: var(--amber); font-size: 24px; margin: 6px 0; text-transform: uppercase; letter-spacing: 0.06em; }
+
+strong { color: var(--navy); }
+em { color: var(--ink); }
+a { color: var(--navy); }
+
+ul, ol { margin: 6px 0; }
+li { margin: 6px 0; }
+
+code {
+    font-family: 'Fira Code', monospace;
+    background: var(--navy-soft);
+    color: var(--navy);
+    padding: 0 6px;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+pre {
+    background: #f6f8fc;
+    border-left: 5px solid var(--navy);
+    border-radius: 6px;
+    padding: 14px 18px;
+    font-size: 20px;
+    line-height: 1.35;
+}
+pre code { background: none; color: var(--ink); padding: 0; font-size: 1em; }
+
+table { font-size: 22px; border-collapse: collapse; margin: 8px 0; }
+th { background: var(--navy); color: #fff; padding: 6px 12px; }
+td { padding: 6px 12px; border-bottom: 1px solid #d9dfeb; }
+tr:nth-child(even) td { background: #f6f8fc; }
+
+blockquote {
+    border-left: 5px solid var(--amber);
+    background: #fdf6ea;
+    color: var(--ink);
+    margin: 10px 0;
+    padding: 10px 18px;
+    font-style: normal;
+}
+
+/* Two columns: <div class="cols"><div>…</div><div>…</div></div> */
+.cols { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 36px; align-items: start; }
+.cols.wide-left { grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); }
+.cols.wide-right { grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); }
+
+.small { font-size: 20px; color: var(--muted); }
+.big { font-size: 34px; line-height: 1.35; }
+.good { color: var(--green); font-weight: 600; }
+.bad { color: var(--red); font-weight: 600; }
+.accent { color: var(--amber); font-weight: 600; }
+.center { text-align: center; }
+
+.qr { width: 190px; height: 190px; }
+.qr-caption { font-size: 16px; color: var(--muted); text-align: center; margin-top: 2px; }
+
+.box {
+    border: 2px solid var(--navy);
+    border-radius: 10px;
+    padding: 12px 18px;
+    background: #fff;
+}
+.box.soft { border-color: var(--navy-soft); background: #f6f8fc; }
+
+/* The demo marker: a slide that hands over to a live demonstration */
+section.demo {
+    background: var(--navy);
+    color: #fff;
+}
+section.demo h1 { color: #fff; border-bottom-color: rgba(255,255,255,0.25); font-size: 48px; }
+section.demo strong, section.demo a { color: #ffd38a; }
+section.demo code { background: rgba(255,255,255,0.15); color: #fff; }
+section.demo::after, section.demo footer { color: rgba(255,255,255,0.6); }
+section.demo .small { color: rgba(255,255,255,0.75); }
+
+/* Section dividers */
+section.divider { justify-content: center; background: var(--navy-soft); }
+section.divider h1 { border: none; font-size: 58px; }
+section.divider p { font-size: 30px; color: var(--muted); }
+
+/* Title and closing slides */
+section.title { justify-content: center; }
+section.title h1 { font-size: 56px; border: none; line-height: 1.15; }
+
+
+/* Code and emphasis on the dark demo slides */
+section.demo pre { background: rgba(255,255,255,0.10); border-left-color: #ffd38a; }
+section.demo pre code { color: #fff; }
+section.demo em { color: #ffd38a; }
+section.demo blockquote { background: #fdf6ea; }
+
+/* Program text that must fit beside a column of bullets */
+pre.tight, .tight pre { font-size: 17px; line-height: 1.3; }
+
+/* Two QR codes side by side */
+.qr-row { display: flex; gap: 28px; justify-content: center; }
+/* A column of bullets a little smaller than the body text */
+.mid { font-size: 23px; }
+.code15 pre { font-size: 15px; }
+
+/* Family badges for the tour */
+.fam { display: inline-block; background: var(--navy); color: #fff; border-radius: 6px;
+       padding: 0 10px; font-size: 18px; font-weight: 600; vertical-align: middle; }
+/* Source and twin side by side, in small code */
+.cols.twin { grid-template-columns: minmax(0, 11fr) minmax(0, 9fr); gap: 28px; }
+.twin pre { font-size: 15px; line-height: 1.28; padding: 10px 14px; margin: 4px 0 10px 0; }
+.twin table { font-size: 18px; }
+.twin td, .twin th { padding: 4px 8px; }
+/* A dense table, a little smaller */
+.dense table { font-size: 18px; }
+.dense td, .dense th { padding: 4px 9px; }
+/* A dense column of boxes */
+.box.compact { padding: 8px 14px; font-size: 22px; }
+.box.compact h3 { margin-top: 4px; }
+.box.compact p { margin: 2px 0 8px 0; }
+.twin h3 { font-size: 17px; margin: 0 0 4px 0; }
+/* A clock in the corner of the speaker's checkpoints */
+.clock { position: absolute; top: 22px; right: 36px; font-size: 18px; color: var(--muted); }
+/* Program text as written: no ligatures (">=" stays ">=") */
+code, pre { font-variant-ligatures: none; }
+
+/* ---- additions for the theory part ---- */
+/* The source text: a notice, or a section of an Act */
+.source { font-family: Georgia, 'Times New Roman', serif; font-size: 30px; line-height: 1.45;
+          border: 2px solid var(--navy); border-radius: 10px; padding: 22px 30px; background: #fff; }
+.source.small-text { font-size: 23px; line-height: 1.4; padding: 14px 22px; }
+.source h4 { font-family: 'Fira Sans', sans-serif; color: var(--red); font-size: 30px; margin: 0 0 8px 0; }
+/* One large statement on a slide */
+.thesis { font-size: 38px; line-height: 1.4; color: var(--navy); font-weight: 600; margin-top: 30px; }
+/* Labels above a column */
+.label { color: var(--amber); font-size: 20px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; margin: 0 0 4px 0; }
+/* Program text sizes */
+pre { margin: 6px 0 12px 0; }
+.code18 pre { font-size: 18px; }
+.code17 pre { font-size: 17px; line-height: 1.3; }
+.timeline { width: 100%; }
+section.title h2 { font-weight: 400; color: var(--muted); font-size: 30px; }
+section.title p { color: var(--ink); }
+/* Content starts at the top of a slide; title and divider slides stay centred */
+section:not(.title):not(.divider) { place-content: safe flex-start; justify-content: flex-start; }
+pre { font-size: 22px; }
+.cols pre { font-size: 19px; }
+.code18 pre, .cols .code18 pre { font-size: 18px; }
